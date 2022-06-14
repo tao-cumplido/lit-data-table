@@ -1,0 +1,22 @@
+{
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"javascript.suggestionActions.enabled": false,
+	"npm.packageManager": "npm",
+	"eslint.packageManager": "npm",
+	"[javascript]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.fixAll.stylelint": true
+		}
+	},
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.fixAll.stylelint": true
+		}
+	},
+	"[javascript][typescript][css][html][xml][json][jsonc]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

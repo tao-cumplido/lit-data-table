@@ -1,0 +1,48 @@
+{
+	"name": "lit-data-table",
+	"version": "0.1.0",
+	"description": "Customizable web component for simple data tables",
+	"keywords": [
+		"web components",
+		"custom components",
+		"lit",
+		"data",
+		"data table",
+		"javascript",
+		"typescript",
+		"esm"
+	],
+	"license": "ISC",
+	"author": "Tao Cumplido",
+	"repository": "https://github.com/tao-cumplido/lit-data-table",
+	"bugs": "https://github.com/tao-cumplido/lit-data-table/issues",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js"
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"*": [
+				"src/index.ts"
+			]
+		}
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"lit": "^2.2.5",
+		"tslib": "~2.4.0"
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "5.28.0",
+		"@typescript-eslint/eslint-plugin": "5.28.0",
+		"eslint": "8.17.0",
+		"eslint-plugin-style": "0.2.0",
+		"prettier": "2.7.0",
+		"typescript": "4.7.3",
+		"vite": "2.9.12"
+	}
+}

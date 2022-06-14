@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"useUnknownInCatchVariables": true,
+		"noImplicitOverride": true,
+		"useDefineForClassFields": false,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"moduleResolution": "node",
+		"module": "esnext",
+		"target": "esnext",
+		"lib": ["esnext", "dom", "dom.iterable"],
+		"sourceMap": true,
+		"importHelpers": true,
+		"experimentalDecorators": true
+	},
+	"include": ["src/**/*.ts"]
+}

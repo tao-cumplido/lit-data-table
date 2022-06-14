@@ -1,0 +1,8 @@
+/debug/
+/.*
+*.tgz
+tsconfig*
+*.d.ts
+*.tsbuildinfo
+*.spec.ts
+*.spec.js*
