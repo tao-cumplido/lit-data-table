@@ -65,7 +65,7 @@ export class DataTable<T> extends LitElement {
 	keyFunction: KeyFn<T> = (item, index) => item?.id ?? index;
 
 	@property({ attribute: false })
-	renderHeader: HeaderRenderer<T> = DataTable.renderHeader as HeaderRenderer<T>;
+	renderHeader?: HeaderRenderer<T>;
 
 	@property({ type: Number })
 	pageSize = 0;
@@ -186,7 +186,12 @@ export class DataTable<T> extends LitElement {
 								sortState: this.sortStates.get(column),
 							};
 
-							return html`<th scope="col" class=${columnClass(column, index)}>${this.renderHeader(state)}</th>`;
+							const render = this.renderHeader ?? DataTable.renderHeader;
+
+							return html`<th scope="col" class=${columnClass(column, index)}>${
+								// @ts-expect-error
+								render(state)
+							}</th>`;
 						})}
 					</tr>
 				</thead>
