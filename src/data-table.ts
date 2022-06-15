@@ -6,11 +6,11 @@ import { map } from 'lit/directives/map.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { when } from 'lit/directives/when.js';
 
-import type { ColumnDefnition, Comparator, HeaderRenderer, SortState } from './types';
+import type { ColumnDefinition, Comparator, HeaderRenderer, SortState } from './types';
 import { DataTableCaption } from './data-table-caption.js';
 import { baseComparator, spaceList } from './utility.js';
 
-function columnClass<T>(column: ColumnDefnition<T>, index: number) {
+function columnClass<T>(column: ColumnDefinition<T>, index: number) {
 	return spaceList('cell', `column-${index}`, column.id);
 }
 
@@ -49,7 +49,7 @@ export class DataTable<T> extends LitElement {
 		</div>
 	`;
 
-	private readonly sortStates = new Map<ColumnDefnition<T>, SortState>();
+	private readonly sortStates = new Map<ColumnDefinition<T>, SortState>();
 
 	private caption?: DataTableCaption;
 
@@ -57,7 +57,7 @@ export class DataTable<T> extends LitElement {
 	data: T[] = [];
 
 	@property({ attribute: false })
-	columns: ReadonlyArray<ColumnDefnition<T>> = [];
+	columns: ReadonlyArray<ColumnDefinition<T>> = [];
 
 	@property({ attribute: false })
 	// @ts-expect-error
@@ -120,7 +120,7 @@ export class DataTable<T> extends LitElement {
 		});
 	}
 
-	private setColumnSort(column: ColumnDefnition<T>, direction: -1 | 0 | 1) {
+	private setColumnSort(column: ColumnDefinition<T>, direction: -1 | 0 | 1) {
 		const sortState = this.sortStates.get(column);
 		let shouldSort = false;
 
@@ -221,11 +221,11 @@ export class DataTable<T> extends LitElement {
 		this.requestUpdate();
 	}
 
-	clearColumnSort(column: ColumnDefnition<T>): void {
+	clearColumnSort(column: ColumnDefinition<T>): void {
 		this.setColumnSort(column, 0);
 	}
 
-	toggleColumnSort(column: ColumnDefnition<T>): void {
+	toggleColumnSort(column: ColumnDefinition<T>): void {
 		const sortState = this.sortStates.get(column);
 
 		if (!this.multiSort) {

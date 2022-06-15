@@ -14,7 +14,7 @@ export type RenderPrimitive = null | undefined | boolean | number | string | sym
 export type RenderUnit<T extends Node> = RenderPrimitive | DirectiveResult | TemplateResult | T;
 export type Renderable<T extends Node> = RenderUnit<T> | Iterable<RenderUnit<T>>;
 
-export interface ColumnDefnition<T> {
+export interface ColumnDefinition<T> {
 	readonly render: (row: T, state: ColumnRenderState<T>) => Renderable<Element>;
 	readonly id?: string;
 	readonly header?: Renderable<Element>;
@@ -24,7 +24,7 @@ export interface ColumnDefnition<T> {
 export interface ColumnRenderState<T> {
 	readonly rowIndex: number;
 	readonly table: DataTable<T>;
-	readonly column: ColumnDefnition<T>;
+	readonly column: ColumnDefinition<T>;
 }
 
 export type Comparator<T> = (valueA: T, valueB: T) => number;
@@ -40,7 +40,7 @@ export interface SortState {
 
 export interface HeaderRenderState<T> {
 	readonly table: DataTable<T>;
-	readonly column: ColumnDefnition<T>;
+	readonly column: ColumnDefinition<T>;
 	readonly sortState?: SortState;
 }
 

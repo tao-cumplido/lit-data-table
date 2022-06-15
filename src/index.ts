@@ -1,5 +1,5 @@
 export type {
-	ColumnDefnition,
+	ColumnDefinition,
 	ColumnRenderState,
 	Comparator,
 	HeaderRenderer,
