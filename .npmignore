@@ -2,7 +2,7 @@
 /.*
 *.tgz
 tsconfig*
-*.d.ts
 *.tsbuildinfo
 *.spec.ts
 *.spec.js*
+/dist/types.js*
