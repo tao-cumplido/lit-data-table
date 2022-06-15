@@ -11,7 +11,7 @@
 		"isolatedModules": true,
 		"moduleResolution": "node",
 		"module": "esnext",
-		"target": "esnext",
+		"target": "es2019",
 		"lib": ["esnext", "dom", "dom.iterable"],
 		"sourceMap": true,
 		"importHelpers": true,
