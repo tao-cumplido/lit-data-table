@@ -38,13 +38,13 @@ export function baseComparator<S, T>(selector: (source: S) => T, matcher: Compar
 }
 
 export function textComparator<T>(
-	selector: (source: T) => string | undefined,
+	selector: (source: T) => string | null | undefined,
 	locales?: string | string[],
 	collatorOptions?: Intl.CollatorOptions,
 ): Comparator<T> {
 	return baseComparator(selector, (a, b) => a.localeCompare(b, locales, collatorOptions));
 }
 
-export function numberComparator<T>(selector: (source: T) => number | undefined): Comparator<T> {
+export function numberComparator<T>(selector: (source: T) => number | null | undefined): Comparator<T> {
 	return baseComparator(selector, (a, b) => a - b);
 }
