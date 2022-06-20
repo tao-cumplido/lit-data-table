@@ -14,11 +14,8 @@ function columnClass<T>(column: ColumnDefinition<T>, index: number) {
 	return spaceList('cell', `column-${index}`, column.id);
 }
 
-/**
- * Customizable web component for simple data tables.
- */
 @customElement('data-table')
-export class DataTable<T> extends LitElement {
+export class DataTable<T = unknown> extends LitElement {
 	static renderHeader: HeaderRenderer<unknown> = ({ table, column, sortState }) => html`
 		<div style="display: flex; justify-content: space-between">
 			${column.header}
@@ -248,5 +245,11 @@ export class DataTable<T> extends LitElement {
 		}
 
 		return this.data;
+	}
+}
+
+declare global {
+	interface HTMLElementTagNameMap {
+		'data-table': DataTable;
 	}
 }
