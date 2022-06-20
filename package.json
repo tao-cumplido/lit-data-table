@@ -1,6 +1,6 @@
 {
 	"name": "lit-data-table",
-	"version": "0.1.6",
+	"version": "0.2.0",
 	"description": "Customizable web component for simple data tables",
 	"keywords": [
 		"web components",
